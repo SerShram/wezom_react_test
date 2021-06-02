@@ -1,0 +1,8 @@
+
+.nav_item a {
+    text-decoration: none;
+    color: #1890ff;
+}
+.nav_item a.active {
+    color: rgba(0,0,0,.65);
+}

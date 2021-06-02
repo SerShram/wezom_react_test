@@ -2,6 +2,12 @@
     height: 100vmin;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     font-size: 14px;
-    color: #000000a6;
+    color: rgba(0,0,0,.65);
+    background-image: url("../images/backdrop.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
 }

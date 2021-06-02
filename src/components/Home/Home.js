@@ -1,7 +1,7 @@
 import logo from "../../images/logo.svg";
-import s from './Main.module.css'
+import s from './Home.module.css'
 
-let Main = () => {
+let Home = () => {
     return(
         <main className={s.main}>
             <img src={logo} className={s.main_logo} alt="logo" />
@@ -9,4 +9,4 @@ let Main = () => {
     )
 }
 
-export default Main;
+export default Home;
