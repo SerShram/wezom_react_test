@@ -1,7 +1,9 @@
+import React from 'react'
+
 const Contacts = () => {
     return(
         <div>
-            <h1>This is Contacts Page!!!</h1>
+            <h1>Contacts</h1>
         </div>
     )
 }

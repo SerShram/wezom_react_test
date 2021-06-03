@@ -5,15 +5,17 @@ import Footer from "./Common/Footer/Footer";
 import Home from "./Home/Home";
 import {Route} from "react-router-dom";
 import Profile from "./Profile/Profile";
-import Contacts from "./Contacts/Contacts";
+import ContactsContainer from "./Contacts/ContactsContainer";
 
 function App() {
   return (
     <div className="App">
         <Header/>
-        <Route  path='/home' component={Home}/>
-        <Route path='/profile' component={Profile} />
-        <Route path='/contacts' component={Contacts} />
+        <main>
+            <Route  path='/home' component={Home}/>
+            <Route path='/profile' component={Profile} />
+            <Route path='/contacts' component={ContactsContainer} />
+        </main>
         <Footer/>
     </div>
   );
