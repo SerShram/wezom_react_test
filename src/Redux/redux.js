@@ -1,10 +1,10 @@
 import {combineReducers, createStore} from "redux";
 import contactsPageReducer from "./contacts-reducer";
 
-let redusers = combineReducers({
+let reducers = combineReducers({
     ContactsPage: contactsPageReducer,
 });
 
-let store = createStore(redusers);
+let store = createStore(reducers);
 
 export default store;

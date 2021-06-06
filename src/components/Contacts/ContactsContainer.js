@@ -1,13 +1,19 @@
-import React from 'react'
 import {connect} from "react-redux";
 import Contacts from "./Contacts";
+import {setUsersAC} from "../../Redux/contacts-reducer";
 
 let mapStateToProps = (state) => {
-    return
+    return {
+        users: state.ContactsPage.users
+    }
 }
 
 let mapDispatchToProps = (dispatch) => {
-    return
+    return {
+        setUsers: (users) => {
+            dispatch(setUsersAC(users))
+        }
+    }
 }
 
 const ContactsContainer = connect(mapStateToProps, mapDispatchToProps)(Contacts);
