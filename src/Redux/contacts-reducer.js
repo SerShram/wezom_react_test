@@ -3,6 +3,7 @@ const ELEMENT_COPY = 'ELEMENT-COPY';
 
 let initialState = {
     users: [],
+
 };
 
 const contactsPageReducer = (state = initialState, action) => {
@@ -12,7 +13,8 @@ const contactsPageReducer = (state = initialState, action) => {
             return state;
 
         case SET_USERS:
-            return {...state, users: [...state.users, ...action.users]}
+            //return {...state, users: [...state.users, ...action.users]} // Добавляем Users к уже существующим
+            return {...state, users: [...action.users]}
 
         default:
             return state;

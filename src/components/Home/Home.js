@@ -1,11 +1,12 @@
+import React from "react";
 import logo from "../../images/logo.svg";
 import s from './Home.module.css'
 
 let Home = () => {
     return(
-        <main className={s.main}>
+        <div className={s.main}>
             <img src={logo} className={s.main_logo} alt="logo" />
-        </main>
+        </div>
     )
 }
 

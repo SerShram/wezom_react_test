@@ -10,10 +10,10 @@ const Card = (props) => {
                     <img src={u.picture.large} alt=""/>
                 </div>
                 <div className={s.card__content}>
-                    <a href="" className={s.card__title}>
+                    <div className={s.card__title}>
                         <span className={s.card__name}>{u.name.title + '. ' + u.name.first + ' ' +u.name.last}</span>
                         <span className={s.card__age}> ({u.dob.age} years)</span>
-                    </a>
+                    </div>
                     <div className={s.card__email}>
                         <a href={'mailto:' + u.email}>{u.email}</a>
                     </div>

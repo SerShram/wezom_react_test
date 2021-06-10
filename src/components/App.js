@@ -12,11 +12,10 @@ function App() {
   return (
     <div className="App">
         <Header/>
-        <main>
             <Route  path='/home' component={Home}/>
             <Route path='/profile' component={Profile} />
             <Route path='/contacts' component={ContactsContainer} />
-        </main>
+            <Route path='/contacts/:id' component={ContactsContainer} />
         <Footer/>
     </div>
   );
