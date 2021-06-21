@@ -36,6 +36,9 @@ a {
     font-size: 13px;
     color: #00000073;
 }
+.card__email, .card__phone, .card__location {
+    display: flex;
+}
 .card__email {
     margin-bottom: 10px;
 }

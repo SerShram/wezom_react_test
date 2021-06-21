@@ -1,0 +1,21 @@
+
+.pagination_list button {
+    color: #000000a6;
+    border: 1px solid transparent;
+    border-radius: 2px;
+}
+.pagination_list button[disabled]:hover {
+    color: #00000040;
+    cursor: not-allowed;
+    pointer-events: auto;
+}
+.pagination_list button:hover {
+    color: #1890ff;
+    background: none;
+}
+.pagination_list button[aria-current="true"], .pagination_list button[aria-current="true"]:hover {
+    color: #1890ff;
+    font-weight: 500;
+    background: #fff;
+    border-color: #1890ff;
+}
