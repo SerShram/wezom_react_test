@@ -39,11 +39,11 @@ a {
 .card__email, .card__phone, .card__location {
     display: flex;
 }
-.card__email {
+.card__email, .card__phone {
     margin-bottom: 10px;
 }
-.card__phone {
-    margin-bottom: 10px;
+.card__email a, .card__phone a, .card__location_wrap {
+    padding: 0 4px;
 }
 .card__location {}
 .card__location_wrap {}

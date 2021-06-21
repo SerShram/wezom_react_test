@@ -1,0 +1,33 @@
+.block_select {
+    width: 120px;
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    cursor: pointer;
+    padding: 5px 7px;
+}
+.block_select:hover {
+    border-color: #1890ff;
+}
+.select_list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    bottom: 110%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 #00000024;
+}
+.select_list li {
+    padding: 5px 12px;
+    cursor: pointer;
+}
+.select_list li:hover {
+    background-color: #f8f8f8;
+}
+.select_list li.active {
+    background: #1890ff29;
+}

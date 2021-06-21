@@ -7,3 +7,8 @@
     display: flex;
     flex-wrap: wrap;
 }
+.paginate_container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}

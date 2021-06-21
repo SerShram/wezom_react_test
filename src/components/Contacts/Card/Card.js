@@ -34,7 +34,7 @@ const Card = ({user, loading}) => {
                             <div className={s.card__country}>{'/' + u.location.country + '/'}</div>
                             <div className={s.card__address}>
 
-                                {u.location.street.number + ' ' + u.location.street.name + ', ' +  u.location.city + ' ' + u.location.postcode}
+                                {u.location.street.number + ' ' + u.location.street.name + ', ' +  u.location.city + ', ' + u.location.state + ' ' + u.location.postcode}
                             </div>
                         </div>
                     </div>
