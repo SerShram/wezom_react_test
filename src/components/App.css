@@ -2,6 +2,7 @@
     min-height: 100vmin;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     font-size: 14px;
     color: rgba(0,0,0,.65);
     background-image: url("../images/backdrop.jpg");

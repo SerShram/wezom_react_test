@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
         <Header/>
-            <Route  path='/home' component={Home}/>
+            <Route exact path='/' component={Home}/>
             <Route path='/profile' component={Profile} />
             <Route path='/contacts' component={ContactsContainer} />
             <Route path='/contacts/:id' component={ContactsContainer} />

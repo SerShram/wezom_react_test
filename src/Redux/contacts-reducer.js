@@ -1,16 +1,16 @@
 const SET_USERS = 'SET-USERS';
 
 let initialState = {
-   users: [],
+  // users: [],
 };
 
 const contactsPageReducer = (state = initialState, action) => {
 
     switch (action.type) {
 
-        case SET_USERS:
+       /* case SET_USERS:
             //return {...state, users: [...state.users, ...action.users]} // Добавляем Users к уже существующим
-            return {...state, users: action.users}
+            return {...state, users: action.users}*/
 
         default:
             return state;

@@ -6,20 +6,22 @@ const CountPerPage = ({usersPerPage, setUsersPerPage}) => {
     const [choiceQuantity] = useState([6, 12, 36, 48]);
     const [visibleChoiceQuantity, setVisibleChoiceQuantity] = useState(false);
 
+    const setChoice = (quantity) => {
+        setUsersPerPage(quantity);
+        setVisibleChoiceQuantity(false);
+    }
+
     return (
         <div>
             <div className={s.block_select}>
                 {visibleChoiceQuantity &&
                     <ul className={s.select_list}>
-                    {choiceQuantity.map((item, index) => {
+                    {choiceQuantity.map((el, index) => {
                         return <li
-                            className={item === usersPerPage ? s.active : ''}
+                            className={el === usersPerPage ? s.active : ''}
                             key={index}
-                            onClick={() => {
-                                setUsersPerPage(item);
-                                setVisibleChoiceQuantity(false);
-                            }}>
-                            {item} / page
+                            onClick={() => setChoice(el)}>
+                            {el} / page
                         </li>
                     })}
                     </ul>

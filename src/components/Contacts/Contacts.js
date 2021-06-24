@@ -4,6 +4,7 @@ import axios from "axios";
 import s from './Contacts.module.css'
 import MyPagination from "../Widgets/MyPagination/MyPagination";
 import CountPerPage from "../Widgets/CountPerPage/CountPerPage";
+import Statistic from "./Statistic/Statistic";
 
 const Contacts = () => {
 
@@ -23,7 +24,7 @@ const Contacts = () => {
         // noinspection JSIgnoredPromiseFromCall
         fetchUsers();
     }, []);
-
+console.log(users)
     // Get current Users
     const indexOfLastUser = currentPage * usersPerPage;
     const indexOfFirstUser = indexOfLastUser - usersPerPage;
@@ -44,7 +45,7 @@ const Contacts = () => {
                 })}
             </div>
             <div>
-                <h2>Statistic</h2>
+                <Statistic/>
             </div>
             <div className={s.paginate_container}>
                 <MyPagination

@@ -45,7 +45,9 @@ a {
 .card__email a, .card__phone a, .card__location_wrap {
     padding: 0 4px;
 }
-.card__location {}
+.card__location {
+    line-height: 1.5;
+}
 .card__location_wrap {}
 .card__country {
     font-weight: 600;

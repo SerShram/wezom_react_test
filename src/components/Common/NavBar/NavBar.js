@@ -6,7 +6,7 @@ function NavBar() {
     return (
         <nav>
             <ul className={s.nav_list}>
-                <NavItem name="Home" link="/home"/>
+                <NavItem name="Home" link="/"/>
                 <NavItem name="Contacts" link="/contacts"/>
             </ul>
         </nav>
