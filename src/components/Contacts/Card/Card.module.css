@@ -3,7 +3,6 @@ a {
     color: #1890ff;
 }
 .cards {
-    min-height: 500px;
     display: flex;
     flex-wrap: wrap;
     margin: 0 -5px 16px;

@@ -1,14 +1,14 @@
 import React, {useState} from 'react'
 import Card from "./Card/Card";
-//import axios from "axios";
 import s from './Contacts.module.css'
 import MyPagination from "../Widgets/MyPagination/MyPagination";
 import CountPerPage from "../Widgets/CountPerPage/CountPerPage";
 import Statistic from "./Statistic/Statistic";
 import CardsViewSwitch from "../Widgets/CardsViewSwitch/CardsViewSwitch";
 import CardsTablet from "./CardsTablet/CardsTablet";
+import preloader from "../../assets/images/spiner.svg"
 
-const Contacts = ({users, currentPage, setCurrentPage, usersPerPage, setUsersPerPage}) => {
+const Contacts = ({users, currentPage, setCurrentPage, usersPerPage, setUsersPerPage, isFetching}) => {
 
     const [typeOfCards, setTypeOfCards] = useState(true);
 
@@ -20,12 +20,17 @@ const Contacts = ({users, currentPage, setCurrentPage, usersPerPage, setUsersPer
     // Change page
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+    console.log(isFetching)
+
     return (
         <div className={s.container}>
             <div className="flex flex-ai-c flex-jc-sb">
                 <h1>Contacts</h1>
                 <CardsViewSwitch typeOfCards={typeOfCards} setTypeOfCards={setTypeOfCards}/>
             </div>
+
+            {isFetching ? <img src={preloader}/> : null}
+
             {typeOfCards
                 ?  <Card currentUsers={currentUsers}/>
                 : <CardsTablet currentUsers={currentUsers}/>

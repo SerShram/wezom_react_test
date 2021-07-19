@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import {setCurrentPageAC, setUsersAC, setUsersPerPageAC} from "../../Redux/contacts-reducer";
+import {setCurrentPageAC, toggleIsFetchingAC, setUsersAC, setUsersPerPageAC} from "../../Redux/contacts-reducer";
 import axios from "axios";
 import Contacts from "./Contacts";
 
@@ -10,8 +10,10 @@ class ContactsContainer extends React.Component {
 
         axios.get(`https://randomuser.me/api/?results=${random}&seed=ss`)
             .then(response => {
+                this.props.toggleIsFetching(true);
                 let users = response.data.results;
                 this.props.setUsers(users);
+                this.props.toggleIsFetching(false);
             });
     }
 
@@ -22,7 +24,8 @@ class ContactsContainer extends React.Component {
                 currentPage={this.props.currentPage}
                 usersPerPage={this.props.usersPerPage}
                 setCurrentPage={this.props.setCurrentPage}
-                setUsersPerPage={this.props.setUsersPerPage}/>
+                setUsersPerPage={this.props.setUsersPerPage}
+                isFetching={this.props.isFetching}/>
         )
     }
 }
@@ -33,6 +36,7 @@ let mapStateToProps = (state) => {
         currentPage: state.ContactsPage.currentPage,
         usersPerPage: state.ContactsPage.usersPerPage,
         setUsersPerPage: state.ContactsPage.setUsersPerPage,
+        isFetching: state.ContactsPage.isFetching,
     }
 }
 
@@ -46,6 +50,9 @@ let mapDispatchToProps = (dispatch) => {
         },
         setUsersPerPage: (quantity) => {
             dispatch(setUsersPerPageAC(quantity))
+        },
+        toggleIsFetching: (isFetching) => {
+            dispatch(toggleIsFetchingAC(isFetching))
         }
 
     }

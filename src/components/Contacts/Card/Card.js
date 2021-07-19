@@ -2,11 +2,7 @@ import React from 'react';
 import s from './Card.module.css';
 import CopyEl from "../../Widgets/CopyEl/CopyEl";
 
-const Card = ({currentUsers, loading}) => {
-
-    if (loading) {
-        return <h2>Loading...</h2>
-    }
+const Card = ({currentUsers}) => {
 
     return (
         <div className={s.cards}>

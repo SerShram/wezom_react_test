@@ -1,13 +1,14 @@
 const SET_USERS = 'SET-USERS';
 const ELEMENT_COPY = 'ELEMENT-COPY';
 const SET_CURRENT_PAGE = 'SET-CURRENT-PAGE';
-//const SET_TOTAL_USERS_COUNT = 'SET-TOTAL-USERS-COUNT';
 const SET_USERS_PER_PAGE = 'SET-USERS-PER-PAGE';
+const TOGGLE_IS_FETCHING = 'TOGGLE-IS-FETCHING';
 
 let initialState = {
     users: [],
     currentPage: 1,
     usersPerPage: 6,
+    isFetching: true
 
 };
 
@@ -33,6 +34,12 @@ const contactsPageReducer = (state = initialState, action) => {
                 usersPerPage: action.usersPerPage
             }
 
+        case TOGGLE_IS_FETCHING:
+            return {
+                ...state,
+                isFetching: action.isFetching
+            }
+
         default:
             return state;
 
@@ -42,7 +49,7 @@ const contactsPageReducer = (state = initialState, action) => {
 export const elementCopyAC = (elem) => ({type: ELEMENT_COPY, elem})
 export const setUsersAC = (users) => ({type: SET_USERS, users})
 export const setCurrentPageAC = (pageNumber) => ({type: SET_CURRENT_PAGE, currentPage: pageNumber})
-//export const setTotalUserCountAC = (count) => ({type: SET_TOTAL_USERS_COUNT, totalUserCount: count})
 export const setUsersPerPageAC = (quantity) => ({type: SET_USERS_PER_PAGE, usersPerPage: quantity})
+export const toggleIsFetchingAC = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching: isFetching})
 
 export default contactsPageReducer;
