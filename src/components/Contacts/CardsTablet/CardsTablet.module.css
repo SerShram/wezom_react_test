@@ -1,0 +1,36 @@
+.table {
+    background-color: #fff;
+    box-shadow: 0 5px 5px #6666661a;
+    padding: 20px;
+    margin-bottom: 14px;
+}
+.table__head {
+    background: #fafafa;
+    font-weight: 700;
+    display: flex;
+    line-height: 22px;
+}
+
+.table__ava {
+    min-width: 98px;
+    text-align: center;
+    padding: 8px;
+}
+.table__ava img {
+    border-radius: 50%;
+    width: 40px;
+}
+.table__item {
+    flex-grow: 1;
+    padding: 8px;
+}
+.table__nat {
+    min-width: 230px;
+    text-align: right;
+    padding: 8px;
+}
+.table__content {
+    display: flex;
+    line-height: 22px;
+}
+

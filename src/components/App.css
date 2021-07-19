@@ -12,3 +12,15 @@
     background-size: cover;
 }
 
+.flex {
+    display: flex;
+}
+.flex-ai-c {
+    align-items: center;
+}
+.flex-jc-sb {
+    justify-content: space-between;
+}
+.flex-jc-c {
+    justify-content: center;
+}

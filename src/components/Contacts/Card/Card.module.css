@@ -2,6 +2,12 @@ a {
     text-decoration: none;
     color: #1890ff;
 }
+.cards {
+    min-height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px 16px;
+}
 .card {
     width: calc(100%/6);
     padding: 0 5px;

@@ -1,12 +1,8 @@
 @media (min-width: 768px) {
     .container {
         padding: 1.25vw 2.6vw;
+        flex-grow: 1;
     }
-}
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -5px 20px;
 }
 .paginate_container {
     display: flex;
