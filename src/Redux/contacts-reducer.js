@@ -8,6 +8,7 @@ let initialState = {
     users: [],
     currentPage: 1,
     usersPerPage: 6,
+
 };
 
 const contactsPageReducer = (state = initialState, action) => {
@@ -26,11 +27,6 @@ const contactsPageReducer = (state = initialState, action) => {
                 currentPage: action.currentPage
             }
 
-       /* case SET_TOTAL_USERS_COUNT:
-            return {
-                ...state,
-                totalUserCount: action.totalUserCount
-            }*/
         case SET_USERS_PER_PAGE:
             return {
                 ...state,
