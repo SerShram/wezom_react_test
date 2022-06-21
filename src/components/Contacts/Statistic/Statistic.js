@@ -1,69 +1,72 @@
-import React from "react";
-import s from "./Statistic.module.css"
+import "./Statistic.scss"
 
 const Statistic = ({users}) => {
 
     let males = 0;
     let females = 0;
     let indeterminate = 0;
-    let nat = {};
+    let nationalities = {};
 
     for (let i = 0; i < users.length; i++) {
-        (users[i].gender === 'male') ? males++ :
-            (users[i].gender === 'female') ? females++ :
-                 indeterminate++ ;
-        // Nationalities
-        if (typeof nat[users[i].nat] === 'undefined') {
-            nat[users[i].nat] = 1;
+        (users[i].gender === 'male')
+            ? males++
+            : (users[i].gender === 'female')
+                ? females++
+                : indeterminate++;
+
+        if (typeof nationalities[users[i].nat] === 'undefined') {
+            nationalities[users[i].nat] = 1;
         } else {
-            nat[users[i].nat]++;
+            nationalities[users[i].nat]++;
         }
     }
 
-    let predominate = (males > females) ? 'Men predominate' :
-        (males < females) ? 'Women predominate' :
-            'Equally';
+    const predominate = (males > females)
+        ? 'Men predominate'
+        : (males < females)
+            ? 'Women predominate'
+            : 'Equally';
 
-    let nationalities = () => {
-        let out = '';
-        for (const key  in nat) {
-           out += `<div><span>${key}:</span> ${nat[key]} contacts</div>`;
-        }
-        return {__html: out}
-    }
+    const keys = Object.keys(nationalities);
 
     return (
-        <div className={s.stat}>
-            <div className={s.stat__wrap}>
+        <div className="stat">
+            <div className="stat__wrap">
                 <h2>Statistic</h2>
-                <div className={s.stat__total_stats}>
-                    <div className={s.stat__item_flex}>
-                        <div className={s.stat__item}>
-                            <div className={s.stat__title}>Collection size</div>
-                            <div className={s.stat__content}>{users.length}</div>
+                <div className="stat__total-stats">
+                    <div className="stat__item-flex">
+                        <div className="stat__item">
+                            <div className="stat__title">Collection size</div>
+                            <div className="stat__content">{users.length}</div>
                         </div>
                     </div>
-                    <div className={s.stat__item_flex}>
-                        <div className={s.stat__items}>
-                            <div className={s.stat__item}>
-                                <div className={s.stat__title}>Males</div>
-                                <div className={s.stat__content}>{males}</div>
+                    <div className="stat__item-flex">
+                        <div className="stat__items">
+                            <div className="stat__item">
+                                <div className="stat__title">Males</div>
+                                <div className="stat__content">{males}</div>
                             </div>
-                            <div className={s.stat__item}>
-                                <div className={s.stat__title}>Females</div>
-                                <div className={s.stat__content}>{females}</div>
+                            <div className="stat__item">
+                                <div className="stat__title">Females</div>
+                                <div className="stat__content">{females}</div>
                             </div>
-                            <div className={s.stat__item}>
-                                <div className={s.stat__title}>Indeterminate</div>
-                                <div className={s.stat__content}>{indeterminate}</div>
+                            <div className="stat__item">
+                                <div className="stat__title">Indeterminate</div>
+                                <div className="stat__content">{indeterminate}</div>
                             </div>
                         </div>
-                        <span className={s.stat__dominate}>{predominate}</span>
+                        <span className="stat__dominate">{predominate}</span>
                     </div>
                 </div>
-                <div className={s.stat__details}>
-                    <div className={s.stat__title}>Nationalities</div>
-                    <div className={s.stat__nat_flex} dangerouslySetInnerHTML={nationalities()} />
+                <div className="stat__details">
+                    <div className="stat__title">Nationalities</div>
+                    <div className="stat__nat-flex">
+                        {
+                            keys.map(key => <div key={key}>
+                                <span>{key}:</span> {nationalities[key]} contacts
+                            </div>)
+                        }
+                    </div>
                 </div>
             </div>
         </div>
