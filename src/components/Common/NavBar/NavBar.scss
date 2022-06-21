@@ -1,6 +1,4 @@
 .nav_list {
-    /*list-style: none;*/
-    /*margin: 0;*/
     padding: 0 8px;
     display: flex;
     font-size: 20px;
@@ -10,3 +8,10 @@
     padding: 0 15px;
 }
 
+.nav_item a {
+    text-decoration: none;
+    color: #1890ff;
+}
+.nav_item a.active {
+    color: rgba(0,0,0,.65);
+}
