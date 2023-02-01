@@ -1,36 +1,35 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import {setCurrentPageAC, toggleIsFetchingAC, setUsersAC, setUsersPerPageAC} from "../../Redux/contacts-reducer";
 import axios from "axios";
 import Contacts from "./Contacts";
 
-class ContactsContainer extends React.Component {
-  componentDidMount() {
-    let random = Math.ceil(Math.random() * 1000); // Случайное количество пользователей
+const ContactsContainer = (props) => {
 
+  const random = Math.ceil(Math.random() * 1000); // Случайное количество пользователей
+
+  useEffect(() => {
     axios.get(`https://randomuser.me/api/?results=${random}&seed=ss`)
       .then(response => {
-        this.props.toggleIsFetching(true);
+        props.toggleIsFetching(true);
         let users = response.data.results;
-        this.props.setUsers(users);
-        this.props.toggleIsFetching(false);
+        props.setUsers(users);
+        props.toggleIsFetching(false);
       });
-  }
+  }, [])
 
-  render() {
-    return (
-      <Contacts
-        users={this.props.users}
-        currentPage={this.props.currentPage}
-        usersPerPage={this.props.usersPerPage}
-        setCurrentPage={this.props.setCurrentPage}
-        setUsersPerPage={this.props.setUsersPerPage}
-        isFetching={this.props.isFetching}/>
-    )
-  }
+  return (
+    <Contacts
+      users={props.users}
+      currentPage={props.currentPage}
+      usersPerPage={props.usersPerPage}
+      setCurrentPage={props.setCurrentPage}
+      setUsersPerPage={props.setUsersPerPage}
+      isFetching={props.isFetching}/>
+  )
 }
 
-let mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
   return {
     users: state.ContactsPage.users,
     currentPage: state.ContactsPage.currentPage,
@@ -40,7 +39,7 @@ let mapStateToProps = (state) => {
   }
 }
 
-let mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     setUsers: (users) => {
       dispatch(setUsersAC(users))

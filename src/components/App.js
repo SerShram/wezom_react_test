@@ -4,7 +4,7 @@ import Home from "./Home/Home";
 import {Route} from "react-router-dom";
 import Profile from "./Profile/Profile";
 import ContactsContainer from "./Contacts/ContactsContainer";
-import NotFound from "./Common/NotFound/NotFound";
+// import NotFound from "./Common/NotFound/NotFound";
 import './App.css';
 
 function App() {
