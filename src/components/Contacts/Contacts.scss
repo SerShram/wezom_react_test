@@ -1,15 +1,26 @@
 .contacts-page {
   padding: 25px 50px;
 
-    &__header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 .paginate_container {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+
+.preload {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 150px;
+  }
 }

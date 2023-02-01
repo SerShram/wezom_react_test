@@ -1,18 +1,20 @@
 .nav_list {
-    padding: 0 8px;
-    display: flex;
-    font-size: 20px;
-    font-weight: bold;
+  padding: 0 8px;
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
 }
+
 .nav_list li {
-    padding: 0 15px;
+  padding: 0 15px;
 }
 
 .nav_item a {
-    text-decoration: none;
-    color: #1890ff;
+  text-decoration: none;
+  color: #1890ff;
 }
+
 .nav_item a.active {
-    color: rgba(0,0,0,.65);
-    cursor: auto;
+  color: rgba(0, 0, 0, .65);
+  cursor: auto;
 }

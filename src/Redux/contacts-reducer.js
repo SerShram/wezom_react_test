@@ -5,45 +5,45 @@ const SET_USERS_PER_PAGE = 'SET-USERS-PER-PAGE';
 const TOGGLE_IS_FETCHING = 'TOGGLE-IS-FETCHING';
 
 let initialState = {
-    users: [],
-    currentPage: 1,
-    usersPerPage: 6,
-    isFetching: true
+  users: [],
+  currentPage: 1,
+  usersPerPage: 6,
+  isFetching: true
 
 };
 
 const contactsPageReducer = (state = initialState, action) => {
 
-    switch (action.type) {
-        case ELEMENT_COPY:
-            return state;
+  switch (action.type) {
+    case ELEMENT_COPY:
+      return state;
 
-        case SET_USERS:
-            //return {...state, users: [...state.users, ...action.users]} // Добавляем Users к уже существующим
-            return {...state, users: action.users}
+    case SET_USERS:
+      //return {...state, users: [...state.users, ...action.users]} // Добавляем Users к уже существующим
+      return {...state, users: action.users}
 
-        case SET_CURRENT_PAGE:
-            return {
-                ...state,
-                currentPage: action.currentPage
-            }
+    case SET_CURRENT_PAGE:
+      return {
+        ...state,
+        currentPage: action.currentPage
+      }
 
-        case SET_USERS_PER_PAGE:
-            return {
-                ...state,
-                usersPerPage: action.usersPerPage
-            }
+    case SET_USERS_PER_PAGE:
+      return {
+        ...state,
+        usersPerPage: action.usersPerPage
+      }
 
-        case TOGGLE_IS_FETCHING:
-            return {
-                ...state,
-                isFetching: action.isFetching
-            }
+    case TOGGLE_IS_FETCHING:
+      return {
+        ...state,
+        isFetching: action.isFetching
+      }
 
-        default:
-            return state;
+    default:
+      return state;
 
-    }
+  }
 }
 //----------------- Action creators ------------------------------
 export const elementCopyAC = (elem) => ({type: ELEMENT_COPY, elem})

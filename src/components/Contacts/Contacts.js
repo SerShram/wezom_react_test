@@ -10,44 +10,49 @@ import './Contacts.scss';
 
 const Contacts = ({users, currentPage, setCurrentPage, usersPerPage, setUsersPerPage, isFetching}) => {
 
-    const [typeOfCards, setTypeOfCards] = useState(true);
+  const [typeOfCards, setTypeOfCards] = useState(true);
+  const indexOfLastUser = currentPage * usersPerPage;
+  const indexOfFirstUser = indexOfLastUser - usersPerPage;
+  const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-    const indexOfLastUser = currentPage * usersPerPage;
-    const indexOfFirstUser = indexOfLastUser - usersPerPage;
-    const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser)
+  return (
+    <div className="contacts-page">
+      <div className="contacts-page__header">
+        <h1>Contacts</h1>
+        <CardsViewSwitch
+          typeOfCards={typeOfCards}
+          setTypeOfCards={setTypeOfCards}
+        />
+      </div>
 
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+      {
+        isFetching
+          ? <div className="preload">
+            <img src={preloader} alt='loading'/>
+          </div>
+          : null
+      }
 
-    return (
-        <div className="contacts-page">
-            <div className="contacts-page__header">
-                <h1>Contacts</h1>
-                <CardsViewSwitch
-                    typeOfCards={typeOfCards}
-                    setTypeOfCards={setTypeOfCards}
-                />
-            </div>
+      {
+        typeOfCards
+          ? <Card currentUsers={currentUsers}/>
+          : <CardsTablet currentUsers={currentUsers}/>
+      }
 
-            {isFetching ? <img src={preloader} alt='loading'/> : null}
+      <Statistic users={users}/>
 
-            {typeOfCards
-                ? <Card currentUsers={currentUsers}/>
-                : <CardsTablet currentUsers={currentUsers}/>
-            }
-
-            <Statistic users={users}/>
-
-            <div className="paginate_container">
-                <MyPagination
-                    usersPerPage={usersPerPage}
-                    totalUsers={users.length}
-                    paginate={paginate}/>
-                <CountPerPage
-                    usersPerPage={usersPerPage}
-                    setUsersPerPage={setUsersPerPage}/>
-            </div>
-        </div>
-    )
+      <div className="paginate_container">
+        <MyPagination
+          usersPerPage={usersPerPage}
+          totalUsers={users.length}
+          paginate={paginate}/>
+        <CountPerPage
+          usersPerPage={usersPerPage}
+          setUsersPerPage={setUsersPerPage}/>
+      </div>
+    </div>
+  )
 }
 
 export default Contacts;
