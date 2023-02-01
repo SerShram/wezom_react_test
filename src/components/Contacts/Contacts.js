@@ -5,7 +5,7 @@ import CountPerPage from "../Widgets/CountPerPage/CountPerPage";
 import Statistic from "./Statistic/Statistic";
 import CardsViewSwitch from "../Widgets/CardsViewSwitch/CardsViewSwitch";
 import CardsTablet from "./CardsTablet/CardsTablet";
-import preloader from "../../assets/images/spiner.svg";
+import preloader from "../../images/spiner.svg";
 import './Contacts.scss';
 
 const Contacts = ({users, currentPage, setCurrentPage, usersPerPage, setUsersPerPage, isFetching}) => {
