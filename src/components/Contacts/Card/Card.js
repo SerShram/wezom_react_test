@@ -30,7 +30,7 @@ const Card = ({currentUsers}) => {
                 <div className={s.card__location}>
                   <CopyEl/>
                   <div className={s.card__location_wrap}>
-                    <div className={s.card__country}>{'/' + user.location.country + '/'}</div>
+                    <div className={s.card__country}>{user.location.country}</div>
                     <div className={s.card__address}>
                       {user.location.street.number + ' ' + user.location.street.name + ', ' + user.location.city + ', ' + user.location.state + ' ' + user.location.postcode}
                     </div>
@@ -40,9 +40,7 @@ const Card = ({currentUsers}) => {
             </div>
           </div>)
       })}
-
     </div>
-
   )
 }
 
