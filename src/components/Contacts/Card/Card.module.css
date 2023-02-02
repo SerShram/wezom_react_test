@@ -10,7 +10,7 @@ a {
 }
 
 .card {
-    width: 15%;
+    width: 16%;
     min-height: 480px;
     flex-grow: 1;
     padding: 0 5px;
@@ -39,11 +39,10 @@ a {
 
 .card__content {
     font-size: 14px;
-    padding: 24px;
+    padding: 24px 15px;
 }
 
 .card__title {
-    display: block;
     margin-bottom: 25px;
 }
 

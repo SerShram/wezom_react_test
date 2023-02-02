@@ -11,14 +11,17 @@ const Card = ({currentUsers}) => {
           <div className={s.card} key={index}>
             <div className={s.card__container}>
               <div className={s.card__image}>
-                <img src={user.picture.large} alt=""/>
+                <img src={user.picture.large} alt="photo"/>
               </div>
               <div className={s.card__content}>
-                <a href='#' className={s.card__title}>
-                                <span
-                                  className={s.card__name}>{user.name.title + '. ' + user.name.first + ' ' + user.name.last}</span>
-                  <span className={s.card__age}> ({user.dob.age} years)</span>
-                </a>
+                <div className={s.card__title}>
+                  <span className={s.card__name}>
+                    {`${user.name.title}. ${user.name.first} ${user.name.last}`}
+                  </span>
+                  <span className={s.card__age}>
+                    ({user.dob.age} years)
+                  </span>
+                </div>
                 <div className={s.card__email}>
                   <CopyEl/>
                   <a href={'mailto:' + user.email}>{user.email}</a>
