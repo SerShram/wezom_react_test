@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Card from "./Card/Card";
+import Card from "./Card";
 import MyPagination from "../Widgets/MyPagination/MyPagination";
 import CountPerPage from "../Widgets/CountPerPage/CountPerPage";
 import Statistic from "./Statistic/Statistic";

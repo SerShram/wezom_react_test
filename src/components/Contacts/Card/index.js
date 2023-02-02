@@ -11,7 +11,7 @@ const Card = ({currentUsers}) => {
           <div className={s.card} key={index}>
             <div className={s.card__container}>
               <div className={s.card__image}>
-                <img src={user.picture.large} alt="photo"/>
+                <img src={user.picture.large} alt=""/>
               </div>
               <div className={s.card__content}>
                 <div className={s.card__title}>
