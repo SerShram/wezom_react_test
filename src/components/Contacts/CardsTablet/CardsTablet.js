@@ -1,5 +1,6 @@
 import React from "react";
 import s from './CardsTablet.module.css';
+import {NavLink} from "react-router-dom";
 
 const CardsTablet = ({currentUsers}) => {
 
@@ -19,9 +20,9 @@ const CardsTablet = ({currentUsers}) => {
         return (
           <div className={s.table__content} key={index}>
             <div className={s.table__ava}>
-              <a href="#">
+              <NavLink to={`/contacts/${user.name.first}_${user.name.last}`}>
                 <img src={user.picture.thumbnail} alt=""/>
-              </a>
+              </NavLink>
             </div>
             <div className={s.table__item}>Full name</div>
             <div className={s.table__item}>Birthday</div>
