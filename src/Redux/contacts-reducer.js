@@ -20,6 +20,10 @@ const contactsPageReducer = (state = initialState, action) => {
 
     case SET_USERS:
       //return {...state, users: [...state.users, ...action.users]} // Добавляем Users к уже существующим
+      let userId = 0
+      action.users.forEach(user => {
+        user.userId = userId++
+      })
       return {...state, users: action.users}
 
     case SET_CURRENT_PAGE:

@@ -1,9 +1,10 @@
 import React from 'react';
 import s from './Card.module.css';
 import CopyEl from "../../Widgets/CopyEl/CopyEl";
+import {NavLink} from "react-router-dom";
 
 const Card = ({currentUsers}) => {
-
+  console.log(currentUsers)
   return (
     <div className={s.cards}>
       {currentUsers.map((user, index) => {
@@ -15,10 +16,13 @@ const Card = ({currentUsers}) => {
               </div>
               <div className={s.card__content}>
                 <div className={s.card__title}>
-                  <span className={s.card__name}>
+                  <NavLink
+                    to={`/contacts/${user.userId}`}
+                    className={s.card__name}
+                    key={user.id.value}>
                     {`${user.name.title}. ${user.name.first} ${user.name.last}`}
-                  </span>
-                  <span className={s.card__age}>
+                  </NavLink>
+                    <span className={s.card__age}>
                     ({user.dob.age} years)
                   </span>
                 </div>

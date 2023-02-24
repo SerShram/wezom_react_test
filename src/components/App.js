@@ -5,7 +5,7 @@ import {Route, Switch} from "react-router-dom";
 import Profile from "./Profile/Profile";
 import ContactsContainer from "./Contacts/ContactsContainer";
 import './App.css';
-import Contact from "./Contacts/Contact";
+import ContactDetail from "./Contacts/ContactDetail";
 import NotFound from "./Common/NotFound";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <Route exact path='/' component={Home}/>
         <Route path='/profile' component={Profile}/>
         <Route exact path='/contacts' component={ContactsContainer}/>
-        <Route exact path='/contacts/:id' component={Contact}/>
+        <Route exact path='/contacts/:id' component={ContactDetail}/>
         <Route path='*' component={NotFound}/>
       </Switch>
 

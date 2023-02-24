@@ -6,7 +6,7 @@ import Contacts from "./Contacts";
 
 const ContactsContainer = (props) => {
 
-  const random = Math.ceil(Math.random() * 1000); // Случайное количество пользователей
+  const random = Math.ceil(Math.random() * 1000);
 
   useEffect(() => {
     axios.get(`https://randomuser.me/api/?results=${random}&seed=ss`)
